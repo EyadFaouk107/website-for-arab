@@ -1,22 +1,19 @@
 /**
- * main.js  —  Application entry point
- *
- * Imports and initialises all modules.
- * Each module is self-contained and guards against missing DOM nodes.
+ * Main Entry Point
  */
 
-import { initNavigation }  from './modules/navigation.js';
-import { initAnimations }  from './modules/animations.js';
-import { initCounters }    from './modules/counters.js';
-import { initSlider }      from './modules/slider.js';
-import { initProjects }    from './modules/projects.js';
-import { initForms }       from './modules/forms.js';
-import { initYouTube }     from './modules/youtube.js';
+import { initNavigation } from './modules/navigation.js';
+import { initAnimations } from './modules/animations.js';
+import { initCounters } from './modules/counters.js';
+import { initSlider } from './modules/slider.js';
+import { initProjects } from './modules/projects.js';
+import { initForms } from './modules/forms.js';
+import { initYouTube } from './modules/youtube.js';
 import { initTranslation } from './modules/translation.js';
 
-// ── Bootstrap ────────────────────────────────────────────────────
-
-function bootstrap() {
+function initApp() {
+  console.log('Arab Contractors Website Initialized');
+  
   initTranslation();
   initNavigation();
   initAnimations();
@@ -25,30 +22,26 @@ function bootstrap() {
   initProjects();
   initForms();
   initYouTube();
-  initBackToTop();
+
+  // Back to Top Button
+  const backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 }
-
-// ── Back-to-top button ───────────────────────────────────────────
-
-function initBackToTop() {
-  const btn = document.querySelector('.back-to-top');
-  if (!btn) return;
-
-  window.addEventListener(
-    'scroll',
-    () => btn.classList.toggle('visible', window.scrollY > 400),
-    { passive: true }
-  );
-
-  btn.addEventListener('click', () =>
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  );
-}
-
-// ── Run after DOM is ready ────────────────────────────────────────
 
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', bootstrap);
+  document.addEventListener('DOMContentLoaded', initApp);
 } else {
-  bootstrap();
+  initApp();
 }

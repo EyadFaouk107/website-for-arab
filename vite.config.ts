@@ -6,17 +6,17 @@ import path from 'path';
 export default defineConfig({
   plugins: [react(), tailwindcss()],
 
-  resolve: {
-    alias: { '@': path.resolve(__dirname, './src') },
-  },
+  // Vite's dev server root is the project root (where index.html lives)
+  root: '.',
 
   build: {
+    outDir: 'dist',
     rollupOptions: {
       input: {
         main:          path.resolve(__dirname, 'index.html'),
         about:         path.resolve(__dirname, 'about.html'),
         projects:      path.resolve(__dirname, 'projects.html'),
-        'project-detail': path.resolve(__dirname, 'project-detail.html'),
+        projectDetail: path.resolve(__dirname, 'project-detail.html'),
         sectors:       path.resolve(__dirname, 'sectors.html'),
         innovation:    path.resolve(__dirname, 'innovation.html'),
         careers:       path.resolve(__dirname, 'careers.html'),
