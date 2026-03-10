@@ -1,0 +1,79 @@
+/* ============================================================
+   DESIGN TOKENS  —  Arab Contractors
+   Single source of truth for all design decisions.
+   ============================================================ */
+
+:root {
+  /* ── Brand Colors ─────────────────────────────────────────── */
+  --c-navy:        #003366;
+  --c-navy-dark:   #002244;
+  --c-navy-light:  #0a4080;
+  --c-gold:        #E8A317;
+  --c-gold-light:  #F5B041;
+  --c-gold-dark:   #C8850A;
+
+  /* ── Neutral Palette ──────────────────────────────────────── */
+  --c-dark:        #1A1A2E;
+  --c-mid:         #6B7280;
+  --c-light:       #F3F4F6;
+  --c-white:       #FFFFFF;
+  --c-border:      rgba(0, 0, 0, 0.08);
+
+  /* ── Semantic ─────────────────────────────────────────────── */
+  --c-success:     #10B981;
+  --c-error:       #EF4444;
+
+  /* ── Typography ───────────────────────────────────────────── */
+  --font-display:  'Playfair Display', Georgia, serif;
+  --font-body:     'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* ── Spacing Scale (8-pt base) ────────────────────────────── */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-6:  24px;
+  --s-8:  32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-20: 80px;
+  --s-24: 96px;
+
+  /* ── Border Radius ────────────────────────────────────────── */
+  --r-sm:   4px;
+  --r-md:   8px;
+  --r-lg:   12px;
+  --r-xl:   20px;
+  --r-full: 9999px;
+
+  /* ── Shadows ──────────────────────────────────────────────── */
+  --shadow-xs: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+  --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
+  --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.10), 0 10px 10px -5px rgba(0,0,0,0.04);
+  --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.18);
+
+  /* ── Transitions ──────────────────────────────────────────── */
+  --ease:        cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --t-fast:   all 0.15s var(--ease);
+  --t-base:   all 0.30s var(--ease);
+  --t-slow:   all 0.60s var(--ease);
+  --t-bounce: all 0.45s var(--ease-bounce);
+
+  /* ── Layout ───────────────────────────────────────────────── */
+  --container-max: 1280px;
+  --nav-h:         80px;
+
+  /* ── Z-index Scale ────────────────────────────────────────── */
+  --z-base:    1;
+  --z-overlay: 10;
+  --z-drawer:  200;
+  --z-nav:     100;
+  --z-toast:   300;
+}
+
+@media (min-width: 1024px) {
+  :root { --nav-h: 100px; }
+}
